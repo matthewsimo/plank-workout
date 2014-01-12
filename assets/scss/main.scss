@@ -1,0 +1,80 @@
+@import "compass";
+
+@import "inc/vars";
+@import "inc/base";
+@import "inc/button";
+
+
+.overlay {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 15%;
+  text-align: right;
+
+  label {
+    font-size: .75em;
+    display: block;
+  }
+
+  select {
+    display: block;
+    width: 80%;
+    margin: 1em 0 3em 20%;
+  }
+}
+
+.total-exercise-timer {
+  font-size: 2.5em;
+  margin-bottom: .25em;
+}
+
+.current-exercise-timer {
+  font-size: 5em;
+}
+
+
+.next-up {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-size: .75em;
+  font-weight: 400;
+
+  p {
+    margin: 0;
+  }
+}
+
+
+.completed-message {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.info {
+  font-weight: 400;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  width: 40%;
+  font-size: .5em;
+  text-align: left;
+
+  .details {
+    padding: 0 0 1em;
+    width: 75%;
+
+    p {
+      line-height: 1.2;
+      padding: 0 0 1em;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}

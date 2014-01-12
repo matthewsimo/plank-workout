@@ -1,0 +1,41 @@
+{
+  "ignore": [
+    "**/.*",
+    "builder",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.4.1",
+  "name": "Ionicons",
+  "license": "MIT",
+  "authors": [
+    "Ben Sperry <ben@drifty.com>",
+    "Adam Bradley <adam@drifty.com>",
+    "Max Lynch <max@drifty.com>"
+  ],
+  "keywords": [
+    "fonts",
+    "icon font",
+    "icons",
+    "ionic",
+    "web font"
+  ],
+  "main": [
+    "css/ionicons.css",
+    "fonts/*"
+  ],
+  "homepage": "https://github.com/driftyco/ionicons",
+  "description": "Ionicons - free and beautiful icons from the creators of Ionic Framework",
+  "_release": "1.4.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.1",
+    "commit": "6b3b1843bd0b98d130769a90a9d28a8d92a16da9"
+  },
+  "_source": "git://github.com/driftyco/ionicons.git",
+  "_target": "~1.4.1",
+  "_originalSource": "ionicons",
+  "_direct": true
+}

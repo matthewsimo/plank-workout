@@ -1,0 +1,19 @@
+{
+  "name": "five-minute-plank",
+  "version": "0.0.1",
+  "description": "Simple Angular Site for 5 Minute Plank Workout",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Simo <matthew.a.simo@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.2.7"
+  }
+}

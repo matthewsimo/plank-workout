@@ -1,0 +1,115 @@
+<!doctype html>
+<!--[if IE 7]>         <html data-ng-app="plankWorkout" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html data-ng-app="plankWorkout" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html data-ng-app="plankWorkout" class="no-js" > <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title data-ng-bind-template="{{page.title}}">Plank Workout | Loading...</title>
+
+  <meta name="description" content="The Plank Workout - get fit, quick.">
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="user-scalable=yes">
+  <meta name="viewport" content="initial-scale=1">
+
+  <base href="/index.html">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js" type="text/javascript" charset="utf-8"></script>
+  <script>window.angular || document.write('<script src="/assets/js/build/vendor.js"><\/script>')</script>
+
+  <script src="/assets/js/build/main.js" type="text/javascript" charset="utf-8"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="assets/vendor/ionicons/css/ionicons.min.css" type="text/css" media="screen" charset="utf-8">
+
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css" media="screen" charset="utf-8">
+
+</head>
+<body ng-class="page.bodyClass">
+
+<div ng-controller="workoutCtrl">
+
+  <div class="overlay" ng-show="showingOptions && !isStarted">
+    <form>
+      <label for="difficulty">Difficulty:</label>
+      <select name="difficulty" ng-model="settings.difficulty" ng-options="difficulty for difficulty in difficultyOptions"></select>
+
+      <label for="audio">Audio:</label>
+      <select name="audio" ng-model="settings.audio">
+        <option value="true">Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+    </form>
+    <button class="close mini icon ion-close" ng-click="toggleOptions()" title="Close Settings"></button>
+  </div>
+
+  <h3 class="total-exercise-timer">{{TotalWorkoutTime()}}</h3>
+  <h1>Plank Workout</h1>
+
+
+  <div ng-hide="workoutCompleted">
+
+
+    <div ng-hide="isStarted">
+      <button class="primary mini icon ion-gear-a" ng-hide="showingOptions" ng-click="toggleOptions()" title="Settings"></button>
+      <p>You ready? <button class="full-btn" ng-click="startWorkout()">Start!</button></p>
+    </div>
+
+    <div ng-show="isStarted">
+
+      <button class="workout-controls icon ion-pause" ng-show="isActive" ng-click="pauseWorkout()" title="Pause Workout"></button>
+      <button class="workout-controls icon ion-play" ng-show="!isActive" ng-click="resumeWorkout()" title="Resume Workout"></button>
+
+
+      <div>
+        <div ng-repeat="exercise in exercises" ng-show="isCurrentExercise(exercise.item)">
+          <h3>{{exercise.name}}</h3>
+          <h3 class="current-exercise-timer">{{currentWorkoutTimer}}</h3>
+        </div>
+      </div>
+
+      <div class="next-up" ng-hide="isLastExercise()">
+        <p>Next: {{getNextExercise().name}}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div ng-show="workoutCompleted" class="completed-message">
+    <h3>Good Job!</h3>
+    <p>You completed your {{settings.difficulty}} level plank workout in {{TotalWorkoutTime()}}. See you tomorrow!</p>
+
+    <button ng-click="restartWorkout()">Restart Workout</button>
+  </div>
+
+
+
+
+  <div class="info">
+
+    <div class="details" ng-show="showDetails">
+      <p>
+        In an effort to mix up my work day and get fit this year, I came across the <a href="http://neilarey.com/workouts/five-minute-plank-workout.html">5 minute plank workout</a> by <a href="http://neilarey.com/">Neila Rey</a>.
+      </p>
+      <p>
+        I built this as a tool for me, but I hope you find it useful too! All credit should go to her for creation of this routine, I just added an interactive element to it.
+      </p>
+
+    </div>
+
+    <p>Built by <a href="http://matthewsimo.com">Matthew Simo</a> | <a class="icon ion-social-twitter" href="http://twitter.com/matthewsimo"></a> | <a class="icon ion-social-github" href="http://github.com/matthewsimo"></a> | <a href="http://github.io/matthewsimo/">source</a> | <a class="icon ion-help-circled" ng-hide="showDetails" ng-click="toggleDetails()"> </a> <a class="icon ion-close-circled" ng-show="showDetails" ng-click="toggleDetails()"></a> </p>
+
+  </div>
+
+
+</div>
+
+<!--[if lt IE 9]>
+  <p class="old-notice">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a>, you're not experiencing this site like I'd hoped. <3 </p>
+<![endif]-->
+
+</body>
+</html>

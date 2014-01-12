@@ -1,0 +1,24 @@
+{
+  "name": "five-minute-plank",
+  "version": "0.0.1",
+  "authors": [
+    "Matthew Simo <matthew.a.simo@gmail.com>"
+  ],
+  "description": "Simple Angular Site for 5 Minute Plank Workout",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/js/vendor",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "~1.2.8",
+    "ionicons": "~1.4.1"
+  }
+}

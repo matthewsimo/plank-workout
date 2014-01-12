@@ -1,0 +1,34 @@
+
+h1, h2, h3, h4, h5 {
+  margin: 0 0 .5em;
+}
+
+body {
+  background: $color1;
+  color: $color2; 
+  font-family: $font;
+  font-size: 200%;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1;
+  padding-top: 2em;
+}
+
+a {
+  color: $color2;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+.icon.ion-social-twitter,
+.icon.ion-social-github,
+.icon.ion-help-circled,
+.icon.ion-close-circled {
+  position: relative;
+  top: 2px;
+}
+

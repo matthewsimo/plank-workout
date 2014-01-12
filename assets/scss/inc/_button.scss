@@ -1,0 +1,54 @@
+
+button {
+  border: none;
+  background: $color2;
+  @include border-radius(5px);
+  width: 3em;
+  height: 3em;
+  display: block;
+  margin: 0 auto 1em;
+  color: $color1;
+  font-family: $font;
+  font-size: .75em;
+  cursor: pointer;
+}
+
+button:hover, button:focus {
+  background: rgba($color2, .8);
+}
+
+button.full-btn {
+  width: 6em;
+  margin-top: 1em;
+}
+
+button.primary {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+button.close {
+  display: block;
+  float: right;
+}
+
+button.icon {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;  
+}
+
+button.mini {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+
+button.workout-controls {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  top: 1em;
+  right: 1em;
+}
