@@ -1,4 +1,4 @@
 node_modules/
-assets/js/vendor/
+assets/vendor/
 
 .sass-cache/
