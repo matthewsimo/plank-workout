@@ -57,34 +57,42 @@ angular.module('workout', [
     name: 'Basic Plank',
     duration: 2,
     item: 0,
+    img: 'plank-basic.png'
   },{
     name: 'Elbow Plank',
     duration: 1,
     item: 1,
+    img: 'plank-elbow.png'
   },{
     name: 'Left Leg Raised Plank',
     duration: 1,
     item: 2,
+    img: 'plank-leg-left.png'
   },{
     name: 'Right Leg Raised Plank',
     duration: 1,
     item: 3,
+    img: 'plank-leg-right.png'
   },{
     name: 'Left Side Plank',
     duration: 1,
     item: 4,
+    img: 'plank-side-left.png'
   },{
     name: 'Right Side Plank',
     duration: 1,
     item: 5,
+    img: 'plank-side-right.png'
   },{
     name: 'Basic Plank',
     duration: 1,
     item: 6,
+    img: 'plank-basic.png'
   },{
     name: 'Elbow Plank',
     duration: 2,
     item: 7,
+    img: 'plank-elbow.png'
   }];
 
   $scope.currentExercise = $scope.exercises[0];

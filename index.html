@@ -67,6 +67,7 @@
         <div ng-repeat="exercise in exercises" ng-show="isCurrentExercise(exercise.item)">
           <h3>{{exercise.name}}</h3>
           <h3 class="current-exercise-timer">{{currentWorkoutTimer}}</h3>
+          <img ng-src="/assets/img/{{exercise.img}}">
         </div>
       </div>
 

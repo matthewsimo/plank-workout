@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           'assets/vendor/ionicons/css/ionicons.min.css',
         ],
         dest: 'assets/build/vendor.css'
-      }
+      },
     },
 
     uglify: {
@@ -49,6 +49,20 @@ module.exports = function(grunt) {
       },
     },
 
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true, 
+            cwd: 'assets/vendor/ionicons/fonts/',
+            src: '*', 
+            dest: 'assets/fonts/', 
+            filter: 'isFile'
+          },
+        ]
+      }
+    },
+
     watch: {
       css: {
         files: 'assets/scss/**/*.scss',
@@ -56,7 +70,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['assets/js/app/**/*.js', 'assets/js/vendor/**/*.js', 'Gruntfile.js'],
-        tasks: ['jshint', 'concat'],//, 'uglify'],
+        tasks: ['jshint', 'concat', 'copy'],//, 'uglify'],
         options: {
           interrupt: true,
         }
@@ -69,8 +83,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+
   grunt.registerTask('default',['watch']);
   grunt.registerTask('lint',['jshint']);
-  grunt.registerTask('build',['jshint', 'concat', 'uglify']);
+  grunt.registerTask('build',['jshint', 'concat', 'uglify', 'copy']);
 
 };
