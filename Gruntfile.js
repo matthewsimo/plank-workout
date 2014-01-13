@@ -22,14 +22,20 @@ module.exports = function(grunt) {
     concat: {
       basic: {
         src: ['assets/js/app/**/*.js'],
-        dest: 'assets/js/build/main.js'
+        dest: 'assets/build/main.js'
       },
       vendor: {
         src: [
           'assets/vendor/angular/angular.min.js',
         ],
-        dest: 'assets/js/build/vendor.js'
+        dest: 'assets/build/vendor.js'
       },
+      vendor_css: {
+        src: [
+          'assets/vendor/ionicons/css/ionicons.min.css',
+        ],
+        dest: 'assets/build/vendor.css'
+      }
     },
 
     uglify: {
