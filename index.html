@@ -45,9 +45,7 @@
     <button class="close mini icon ion-close" ng-click="toggleOptions()" title="Close Settings"></button>
   </div>
 
-  <h3 class="total-exercise-timer">{{TotalWorkoutTime()}}</h3>
-  <h1>Plank Workout</h1>
-
+  <h1 class="total-exercise-timer">{{TotalWorkoutTime()}} Plank Workout</h1>
 
   <div ng-hide="workoutCompleted">
 
@@ -67,7 +65,7 @@
         <div ng-repeat="exercise in exercises" ng-show="isCurrentExercise(exercise.item)">
           <h3>{{exercise.name}}</h3>
           <h3 class="current-exercise-timer">{{currentWorkoutTimer}}</h3>
-          <img ng-src="/assets/img/{{exercise.img}}">
+          <img width="300" ng-src="/assets/img/{{exercise.img}}">
         </div>
       </div>
 
@@ -83,7 +81,9 @@
     <h3>Good Job!</h3>
     <p>You completed your {{settings.difficulty}} level plank workout in {{TotalWorkoutTime()}}. See you tomorrow!</p>
 
+    <!--
     <button ng-click="restartWorkout()">Restart Workout</button>
+    -->
   </div>
 
 
