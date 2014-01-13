@@ -75,7 +75,27 @@ module.exports = function(grunt) {
           interrupt: true,
         }
       },
-    }
+    },
+
+    "regex-replace": {
+      ghp: {
+        src: 'index.html',
+        actions: [{
+          search: '(src|href)="/assets/',
+          replace: '$1="/plank-workout/assets/',
+          flags: 'gi'
+        }]
+      },
+      unghp: {
+        src: 'index.html',
+        actions: [{
+          search: '(src|href)="/plank-workout/assets/',
+          replace: '$1="/assets/',
+          flags: 'gi'
+        }]
+      }
+    },
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -84,9 +104,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-regex-replace');
 
   grunt.registerTask('default',['watch']);
   grunt.registerTask('lint',['jshint']);
   grunt.registerTask('build',['jshint', 'concat', 'uglify', 'copy']);
+  grunt.registerTask('ghp', ['regex-replace:ghp']);
+  grunt.registerTask('un-ghp', ['regex-replace:unghp']);
 
 };
