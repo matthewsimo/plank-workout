@@ -90,19 +90,22 @@ angular.module('buzzer', [
       if(isPlaying){
         sound.stop();
         isPlaying = false;
+        finishTimeout = $timeout(finishCB, 150);
       } else {
 
-        if(count === 3)
+        if(count === 3) {
           sound.play(220);
+          finishTimeout = $timeout(finishCB, 150);
+        }
 
-        if(count === 1)
-          sound.play(261);
+        if(count === 1) {
+          sound.play(293);
+          finishTimeout = $timeout(finishCB, 500);
+        }
 
         isPlaying = true;
       }
 
-      if(count !== 0)
-        finishTimeout = $timeout(finishCB, 350);
 
       count--;
     };
