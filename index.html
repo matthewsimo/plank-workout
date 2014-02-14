@@ -31,18 +31,11 @@
 
 <div ng-controller="workoutCtrl">
 
-  <div class="overlay" ng-show="showingOptions && !isStarted">
+  <div class="overlay" ng-show="!isStarted">
     <form>
       <label for="difficulty">Difficulty:</label>
       <select name="difficulty" ng-model="settings.difficulty" ng-options="difficulty for difficulty in difficultyOptions"></select>
-
-      <label for="audio">Audio:</label>
-      <select name="audio" ng-model="settings.audio">
-        <option value="true">Enabled</option>
-        <option value="false">Disabled</option>
-      </select>
     </form>
-    <button class="close mini icon ion-close" ng-click="toggleOptions()" title="Close Settings"></button>
   </div>
 
   <h1 class="total-exercise-timer">{{TotalWorkoutTime()}} Plank Workout</h1>
@@ -51,7 +44,6 @@
 
 
     <div ng-hide="isStarted">
-      <button class="primary mini icon ion-gear-a" ng-hide="showingOptions" ng-click="toggleOptions()" title="Settings"></button>
       <p>You ready? <button class="full-btn" ng-click="startWorkout()">Start!</button></p>
     </div>
 

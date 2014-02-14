@@ -192,14 +192,7 @@ angular.module('workout', [
   
 .controller('workoutCtrl', ['$scope', '$rootScope', 'timer', function($scope, $rootScope, timer) {
 
-  $scope.showingOptions = $scope.isStarted = $scope.isActive = $scope.workoutCompleted = $scope.showDetails = false;
-
-  $scope.toggleOptions = function(){
-    if($scope.showingOptions)
-      $scope.showingOptions = false;
-    else
-      $scope.showingOptions = true;
-  };
+  $scope.isStarted = $scope.isActive = $scope.workoutCompleted = $scope.showDetails = false;
 
   $scope.difficultyOptions = [
     'beginner',
@@ -210,9 +203,7 @@ angular.module('workout', [
   ];
 
   $scope.settings = {
-    difficulty:  'medium',
-    audio: true,
-//    random:  0, // Add randomization laterss
+    difficulty:  'easy',
   };
 
   $scope.getTimeDuration = function(duration){
