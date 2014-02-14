@@ -1,9 +1,8 @@
 angular.module('workout', [
   'timer',
-  'buzzer',
 ])
   
-.controller('workoutCtrl', ['$scope', '$rootScope', 'timer', 'buzzer', function($scope, $rootScope, timer, buzzer) {
+.controller('workoutCtrl', ['$scope', '$rootScope', 'timer', function($scope, $rootScope, timer) {
 
   $scope.showingOptions = $scope.isStarted = $scope.isActive = $scope.workoutCompleted = $scope.showDetails = false;
 
@@ -197,21 +196,14 @@ angular.module('workout', [
       return;
     }
 
-    if(count === 3 && $scope.settings.audio)
-      buzzer.warning();
-
     if(count > 0) {
       $scope.currentWorkoutTimer = count;
       return;
     }
 
     if( $scope.isLastExercise() ) {
-      if($scope.settings.audio)
-        buzzer.finish();
       $scope.endWorkout();
     } else {
-      if($scope.settings.audio)
-        buzzer.ending();
       $scope.nextExercise();
     }
 

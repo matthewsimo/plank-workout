@@ -1,6 +1,5 @@
 var PW = angular.module('plankWorkout', [
   'timer',
-  'buzzer',
   'workout',
 ])
 
