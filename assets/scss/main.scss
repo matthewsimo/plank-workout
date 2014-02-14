@@ -1,15 +1,19 @@
 @import "compass";
 
 @import "inc/vars";
+@import "inc/media-queries";
 @import "inc/base";
 @import "inc/button";
 
+#container {
+  padding: 10%;
+}
 
 .overlay {
   position: absolute;
   top: 2%;
   right: 2%;
-  width: 15%;
+  width: 25%;
   text-align: right;
 
   label {
@@ -29,7 +33,7 @@
   top: 2%;
   left: 2%;
   font-size: 1em;
-  margin-bottom: .25em;
+  margin: 0 1.5em .25em 0;
 }
 
 .current-exercise-timer {
@@ -37,12 +41,11 @@
   margin-bottom: 0;
 }
 
-
 .next-up {
-  position: absolute;
+  position: fixed;
   bottom: 2%;
   right: 2%;
-  font-size: .75em;
+  font-size: .5em;
   font-weight: 400;
 
   p {
@@ -68,7 +71,7 @@
   position: absolute;
   bottom: 2%;
   left: 2%;
-  width: 40%;
+  width: 60%;
   font-size: .5em;
   text-align: left;
 
@@ -85,5 +88,85 @@
   p {
     margin: 0;
     padding: 0;
+  }
+}
+
+@include max-screen(640px) {
+  #container {
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+  }
+
+  .total-exercise-timer {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    margin: 0 1.5em .25em;
+
+    span {
+      display: none;
+    }
+  }
+
+  .overlay {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: auto;
+    text-align: center;
+
+    label {
+      display: inline;
+    }
+
+    select {
+      display: inline;
+      width: 30%;
+      margin: 1em;
+    }
+  }
+
+  .current-exercise-timer {
+    font-size: 3em;
+  }
+
+  .workout-wrapper {
+    padding: 8%;
+  }
+
+  .exercise img {
+    display: none;
+  }
+
+  .next-up {
+    bottom: 1.5em;
+    left: 0;
+    width: 100%;
+    padding: 0 2% 6%;
+  }
+
+  .info {
+    bottom: 2%;
+    left: 0;
+    height: 1.5em;
+    line-height: 1.5;
+    width: 100%;
+    padding: 0 2%;
+    font-size: .45em;
+    text-align: center;
+
+    .details {
+      position: fixed;
+      bottom: 9%;
+      left: 5%;
+      width: 90%;
+      font-size: 1.15em;
+      text-align: left;
+      padding: 1em 1em 0;
+      background: rgba(0,0,0,.6);
+      @include border-radius(3px);
+    }
   }
 }

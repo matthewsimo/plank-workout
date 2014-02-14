@@ -46,9 +46,17 @@ button.mini {
 
 
 button.workout-controls {
-  position: absolute;
+  position: fixed;
   width: 2em;
   height: 2em;
   top: 2%;
   right: 2%;
+  z-index: 5;
+}
+
+
+@include max-screen(640px) {
+  button {
+    font-size: .6em;
+  }
 }
